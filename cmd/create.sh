@@ -1,21 +1,18 @@
 cmd_create_help() {
     cat <<_EOF
     create
-        Create the squid container '$CONTAINER'.
+        Create the container '$CONTAINER'.
 
 _EOF
 }
 
 rename_function cmd_create orig_cmd_create
 cmd_create() {
-    mkdir -p conf.d data run logs
+    mkdir -p var-www/moodle
     orig_cmd_create \
-        --mount type=bind,src=$(pwd)/conf.d,dst=/etc/mysql/mariadb.conf.d \
-        --mount type=bind,src=$(pwd)/data,dst=/var/lib/mysql \
-        --mount type=bind,src=$(pwd)/run,dst=/var/run/mysqld \
-        --mount type=bind,src=$(pwd)/logs,dst=/var/log/mysql
-
-    # make the command 'mariadb' global
-    mkdir -p $DSDIR/cmd/
-    cp $APP_DIR/cmd/mariadb.sh $DSDIR/cmd/
+        --mount type=bind,src=$(pwd)/var-www,dst=/var/www \
+        --workdir /var/www/moodle \
+        --env php='sudo --user=www-data php' \
+        --env moosh='sudo --user=www-data --set-home moosh --no-user-check' \
+        "$@"
 }
