@@ -1,17 +1,17 @@
-APP=moodle
+APP=freedombox
 MOODLE_BRANCH=MOODLE_34_STABLE
 
 ### Docker settings.
-IMAGE=dockerscripts/moodle
-CONTAINER=moodle1-example-org
+IMAGE=dockerscripts/freedombox
+CONTAINER=freedombox1-example-org
 #PORTS=
 
-DOMAIN="moodle1.example.org"
+DOMAIN="plinth.example.org"
 
 ### MySQL settings
-DBNAME=moodle
-DBUSER=moodle
-DBPASS=moodle
+DBNAME=plinth
+DBUSER=plint
+DBPASS=plinth
 
 ### Gmail account for notifications.
 ### Make sure to enable less-secure-apps:
@@ -19,9 +19,9 @@ DBPASS=moodle
 GMAIL_ADDRESS=
 GMAIL_PASSWD=
 
-### Moodle site settings.
+### freedombox site settings.
 SITE_LANG=en
-SITE_FULLNAME="Moodle Example 1"
+SITE_FULLNAME="freedombox Example 1"
 SITE_SHORTNAME="MDL1"
 
 ### Admin settings.
