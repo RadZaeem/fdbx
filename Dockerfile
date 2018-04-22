@@ -38,9 +38,9 @@ RUN apt-get update && \
 #     apt-get -y install mariadb-server mariadb-client
 
 ### Install packages required by moodle.
-RUN DEBIAN_FRONTEND=noninteractive \
-    apt-get -y install \
-            sudo apache2 
+# RUN DEBIAN_FRONTEND=noninteractive \
+#     apt-get -y install \
+#             sudo apache2 
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get -y install plinth 
             # graphviz 
