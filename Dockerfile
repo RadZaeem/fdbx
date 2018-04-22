@@ -23,7 +23,7 @@ CMD ["/sbin/init"]
 
 RUN apt-get update
 #; apt-get -y upgrade
-RUN apt-get -y plinth
+# RUN apt-get -y plinth
 # RUN apt-get -y install rsyslog logrotate ssmtp logwatch cron vim
 
 WORKDIR /host
