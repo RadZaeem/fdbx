@@ -15,7 +15,8 @@ FROM debian:buster
 ENV container docker
 
 ### install systemd
-RUN apt update && apt -y upgrade
+RUN apt update 
+#&& apt -y upgrade
 RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
 RUN apt -y install systemd resolvconf
 RUN systemctl set-default multi-user.target
