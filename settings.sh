@@ -1,9 +1,9 @@
-APP=mariadb
+APP=fdbx
 
 VERSION=10.2    # 10.0 / 10.1 / 10.2 / 10.3
 
-IMAGE=mariadb
-CONTAINER=mariadb
+IMAGE=fdbx
+CONTAINER=fdbx
 
 ### Gmail account for notifications.
 ### Make sure to enable less-secure-apps:
