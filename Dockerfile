@@ -29,7 +29,9 @@ RUN apt-get update && \
     apt-get -y install cron vim git wget curl unzip \
                rsyslog logrotate ssmtp logwatch
 
-RUN sudo apt-get install \
+RUN apt-get -y install sudo
+
+RUN apt-get -y install \
    augeas-tools \
    dblatex \
    docbook-utils \
