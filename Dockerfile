@@ -13,6 +13,7 @@
 
 FROM debian:buster
 ENV container docker
+ENV TERM dumb
 
 ### install systemd
 RUN apt update 
