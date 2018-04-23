@@ -16,7 +16,7 @@ ENV container docker
 
 ### install systemd
 RUN apt update 
-RUN apt-get install -y dialog apt-utils  debconf
+RUN apt-get install -y dialog apt-utils 
 #&& apt -y upgrade
 RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
 RUN apt -y install systemd resolvconf
