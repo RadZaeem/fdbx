@@ -16,12 +16,13 @@ ENV container docker
 
 ### install systemd
 RUN apt update 
+RUN apt-get install -y dialog apt-utils 
 #&& apt -y upgrade
 RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
 RUN apt -y install systemd resolvconf
 RUN systemctl set-default multi-user.target
 RUN ln -s /lib/systemd/systemd /sbin/init
-# CMD ["/sbin/init"]
+CMD ["/sbin/init"]
 
 ### Update and upgrade and install some other packages.
 RUN apt-get update && \
@@ -70,7 +71,7 @@ RUN git clone https://salsa.debian.org/freedombox-team/plinth.git && \
 cd plinth && python3 setup.py install
 
 RUN  DEBIAN_FRONTEND=noninteractive apt install -y $(plinth --list-dependencies)
-RUN apt-get install dialog apt-utils -y
+
 # ENTRYPOINT ["plinth"]
 ### Install mariadb
 # RUN apt-get -y install software-properties-common && \
