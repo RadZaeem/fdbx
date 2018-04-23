@@ -69,7 +69,7 @@ RUN apt-get -y install \
 RUN git clone https://salsa.debian.org/freedombox-team/plinth.git && \
 cd plinth && python3 setup.py install
 
-RUN apt install -y $(plinth --list-dependencies)
+RUN  DEBIAN_FRONTEND=noninteractive apt install -y $(plinth --list-dependencies)
 
 ENTRYPOINT ["plinth"]
 ### Install mariadb
