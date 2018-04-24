@@ -12,7 +12,7 @@ cmd_config() {
     ds inject set_prompt.sh
     # ds inject ssmtp.shs
     # ds inject mariadb.sh
-    ds inject apache2.sh
+    # ds inject apache2.sh
 
     # run moodle config scripts
     # ds inject cfg/01_mount_tmp_on_ram.sh
